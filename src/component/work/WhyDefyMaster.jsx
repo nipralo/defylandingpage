@@ -34,7 +34,7 @@ const whyDefyData = {
 
 export default function WhyDefyMaster() {
   return (
-    <section className="bg-white">
+    <section id="why-defy" className="bg-white">
       <Wrapper>
         <div className="grid md:gap-16 items-center">
           <div className="flex flex-col md:flex-row md:gap-10 gap-6 items-center">

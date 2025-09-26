@@ -32,7 +32,7 @@ const curriculumData = [
 
 export default function CurriculumMaster() {
   return (
-    <section className="bg-[#f6f6eb]">
+    <section id="courses" className="bg-[#f6f6eb]">
       <Wrapper>
         <h2 className="font-bold text-center mb-heading text-primary">
           WHAT HAPPENS IN <span className="text-outline-primary">5 DAYS?</span>

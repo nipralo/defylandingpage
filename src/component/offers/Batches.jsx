@@ -27,7 +27,7 @@ export default function Batches() {
   ];
 
   return (
-    <div className="text-center md:pt-8">
+    <div id="batches" className="text-center md:pt-8">
       <div className="mb-heading">
         <h2 className="font-bold">
           <span className="text-outline-primary">UPCOMING</span>{" "}

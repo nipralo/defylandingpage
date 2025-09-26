@@ -3,9 +3,9 @@
 import Button from "@/ui/Button";
 import Wrapper from "@/ui/Wrapper";
 import validateField from "@/utils/validateField";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import FormFields from "./FormFields";
-import { useRouter } from "next/navigation";
 
 export default function RegistrationForm({
   variant = "light",
@@ -107,7 +107,7 @@ export default function RegistrationForm({
           form_type:
             formData.form_type || (variant === "light" ? "form 1" : "form 2"),
         }).toString();
-        
+
         router.push(`/thank-you?${queryParams}`);
         // Optionally reset form or show success message here
       } catch (error) {
@@ -136,6 +136,7 @@ export default function RegistrationForm({
 
   return (
     <section
+      id={isDark ? "form-2" : "form-1"}
       className={`${
         isDark ? "bg-primary-dark text-white" : "bg-[#dae0df]"
       } hide-cta`}

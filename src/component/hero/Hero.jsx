@@ -1,5 +1,7 @@
+"use client";
 import Button from "@/ui/Button";
 import Wrapper from "@/ui/Wrapper";
+import scrollToSection from "@/utils/scrollToSection";
 
 export default function Hero() {
   return (
@@ -49,7 +51,9 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <Button className="!w-fit">GET FREE CONSULTATION</Button>
+          <Button onClick={() => scrollToSection("form-1")} className="!w-fit">
+            GET FREE CONSULTATION
+          </Button>
         </div>
       </Wrapper>
     </div>

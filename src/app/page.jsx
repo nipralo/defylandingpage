@@ -1,9 +1,9 @@
 import CurriculumMaster from "@/component/curriculum/CurriculumMaster";
 import FaqMaster from "@/component/faq/FaqMaster";
-import CTABanner from "@/component/footer/CTABanner";
+import CTAFooter from "@/component/footer/CTAFooter";
 import RegistrationForm from "@/component/form/RegistrationForm";
 import HeroMaster from "@/component/hero/HeroMaster";
-import Slugs from "@/component/hero/Slugs";
+import StickyNav from "@/component/hero/StickyNav";
 import LocationMaster from "@/component/location/LocationMaster";
 import NotificationMaster from "@/component/notification/NotificationMaster";
 import OfferMaster from "@/component/offers/OfferMaster";
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <HeroMaster />
-      <Slugs />
+      <StickyNav />
       <DroneTraining />
       <OfferMaster />
       <WorkMaster />
@@ -32,7 +32,7 @@ export default function Home() {
         secondaryHeading="REGISTER"
         secondarySubtext="Next batch starts in 7 days. Don't miss out!"
       />
-      <CTABanner />
+      <CTAFooter />
     </>
   );
 }

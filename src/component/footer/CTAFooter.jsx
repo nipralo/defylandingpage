@@ -1,9 +1,10 @@
 "use client";
 
 import Button from "@/ui/Button";
+import scrollToSection from "@/utils/scrollToSection";
 import { useEffect, useState } from "react";
 
-export default function CTABanner() {
+export default function CTAFooter() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function CTABanner() {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 bg-white shadow-lg pt-4 px-6 z-50 transition duration-500 ${
+      className={`fixed bottom-0 left-0 right-0 bg-white pt-4 px-6 z-50 transition duration-500 shadow-2xl shadow-primary-dark ${
         isVisible ? "translate-y-0" : "translate-y-full"
       }`}
     >
@@ -36,7 +37,9 @@ export default function CTABanner() {
         <p className="text-accent-green-base">
           No payment is required for an expert consultation!
         </p>
-        <Button className="my-3" >GET FREE CONSULTATION</Button>
+        <Button onClick={() => scrollToSection("form-2")} className="my-3">
+          GET FREE CONSULTATION
+        </Button>
       </div>
     </div>
   );
