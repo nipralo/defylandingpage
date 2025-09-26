@@ -4,8 +4,8 @@ const validateField = (name, value) => {
       // Allow either:
       // 1. Only first name (letters only), OR
       // 2. First + Last (letters only, one space in between)
-      if (!/^[A-Za-z]+(?: [A-Za-z]+)?$/.test(value.trim())) {
-        return "Enter a valid name (letters only, one optional space for last name)";
+      if (!/^[A-Za-z\s]+$/.test(value.trim())) {
+        return "Enter a valid name";
       }
       break;
 

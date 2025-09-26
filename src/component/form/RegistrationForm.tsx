@@ -4,7 +4,8 @@ import Button from "@/ui/Button";
 import Wrapper from "@/ui/Wrapper";
 import validateField from "@/utils/validateField";
 import { useState } from "react";
-import FormFields from "./FormFields"; // ✅ Import extracted component
+import FormFields from "./FormFields";
+import { useRouter } from "next/navigation";
 
 export default function RegistrationForm({
   variant = "light",
@@ -20,13 +21,13 @@ export default function RegistrationForm({
     full_Name: "",
     phone: "",
     email: "",
-    purpose: "",
     city: "",
     month: "",
+    form_type: "",
   });
 
   const [errors, setErrors] = useState({});
-
+  const router = useRouter();
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -45,7 +46,7 @@ export default function RegistrationForm({
     setErrors((prev) => ({ ...prev, city: errorMsg }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Check for errors
@@ -60,16 +61,76 @@ export default function RegistrationForm({
     // Only submit if no errors
     if (Object.keys(newErrors).length === 0) {
       const payload = {
-        formId: variant === "light" ? "form1" : "form2",
-        data: { ...formData },
+        data: {
+          full_name: formData.full_Name, // Adjust for Strapi field
+          phone: formData.phone,
+          email: formData.email,
+          city: formData.city,
+          preferred_training_month: formData.month, // Map to Strapi's field
+          form_type: variant === "light" ? "form 1" : "form 2",
+        },
       };
 
-      console.log("Submitting form:", payload);
+      try {
+        const API_URL = process.env.NEXT_PUBLIC_API_URL;
+        const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
-      // Here you can replace with actual API call
-      // fetch("/api/submit-form", { method: "POST", body: JSON.stringify(payload) })
+        const response = await fetch(`${API_URL}/api/landing-page-enquiries`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${API_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log("Form submitted successfully:", result);
+        setFormData({
+          full_Name: "",
+          phone: "",
+          email: "",
+          city: "",
+          month: "",
+          form_type: "",
+        });
+        const queryParams = new URLSearchParams({
+          full_Name: formData.full_Name,
+          phone: formData.phone,
+          email: formData.email,
+          city: formData.city,
+          month: formData.month,
+          form_type:
+            formData.form_type || (variant === "light" ? "form 1" : "form 2"),
+        }).toString();
+        
+        router.push(`/thank-you?${queryParams}`);
+        // Optionally reset form or show success message here
+      } catch (error) {
+        console.error("Form submission error:", error);
+        setFormData({
+          full_Name: "",
+          phone: "",
+          email: "",
+          city: "",
+          month: "",
+          form_type: "",
+        });
+      }
     } else {
       console.log("Cannot submit, errors exist:", newErrors);
+      setFormData({
+        full_Name: "",
+        phone: "",
+        email: "",
+        city: "",
+        month: "",
+        form_type: "",
+      });
     }
   };
 
