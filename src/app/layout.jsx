@@ -125,7 +125,12 @@ export default function RootLayout({ children }) {
         />
 
         {/* Favicon */}
-        <link rel="icon" type="image/png" href="/images/defy-favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap"
+          rel="stylesheet"
+        />
       </head>
 
       <body

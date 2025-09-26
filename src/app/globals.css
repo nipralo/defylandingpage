@@ -1,6 +1,6 @@
 @import "tailwindcss";
 /* Extend Tailwind defaults */
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"); */
 
 /* // Archivo Expanded - Light (300) */
 @font-face {
@@ -81,7 +81,6 @@
   --color-accent-green-light: hsl(57, 39%, 89%);
   --color-accent-green-dark: hsl(152, 94%, 13%);
   --color-accent-green-text: hsl(166, 17%, 34%);
-  --font-archivo-expanded: "Archivo Expanded", "sans-serif" !important;
   --font-archivo: "Archivo", "sans-serif" !important;
 
   /* Consistent rounded corners */
