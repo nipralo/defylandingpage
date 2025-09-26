@@ -19,12 +19,12 @@ export default function NavItems({ item, isDark }) {
                     ? "bg-black/40 hover:bg-black/60"
                     : "bg-white/10 hover:bg-white/20"
                 }
-                ${isActive ? "ring-2 ring-accent-gold" : ""}`}
+                ${isActive ? "!bg-primary/90" : ""}`}
     >
       <img
         src="/svg/arrow_top_right.svg"
         alt="arrow top right icon"
-        className="w-2.5 lg:w-4.5"
+        className={`w-2.5 lg:w-4.5 transition-all duration-500 ease-in-out ${isActive ? "rotate-90 " : ""}`}
       />
       {item.label}
     </button>

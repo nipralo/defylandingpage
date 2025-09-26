@@ -77,7 +77,7 @@ export default function FormFields({
         name="month"
         value={formData.month}
         onChange={handleChange}
-        className="w-full px-2 py-3 border border-white rounded-sm bg-white text-black"
+        className="w-full px-2 py-3 border border-white rounded-sm bg-white text-black focus:outline-0"
         required
       >
         <option value="" disabled hidden>
