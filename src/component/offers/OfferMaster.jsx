@@ -4,7 +4,7 @@ import ClassOfDrones from "./ClassOfDrones";
 
 export default function OfferMaster() {
   return (
-    <section className="bg-accent-orange-light">
+    <section id="batches" className="bg-accent-orange-light">
       <Wrapper>
         <ClassOfDrones />
         <Batches />

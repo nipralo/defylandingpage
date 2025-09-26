@@ -8,11 +8,11 @@ export default function StickyNav() {
   const heroInView = useInView("hero"); // hero section id
 
   const items = [
-    { icon: "📚", label: "Courses", target: "courses" },
-    { icon: "🎓", label: "Learn", target: "learn" },
-    { icon: "❓", label: "Why Defy", target: "why-defy" },
-    { icon: "💼", label: "Careers", target: "careers" },
     { icon: "📊", label: "Batches", target: "batches" },
+    { icon: "❓", label: "Why Defy", target: "why-defy" },
+    { icon: "📚", label: "Courses", target: "courses" },
+    { icon: "💼", label: "FAQ", target: "faq" },
+    { icon: "🎓", label: "Location", target: "location" },
   ];
 
   return (
