@@ -51,25 +51,34 @@ export default function FaqMaster() {
               key={index}
               className="border border-gray-200 hover:bg-gray-50 rounded-primary"
             >
+              {/* Question */}
               <div
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-4 md:p-6 text-left flex items-center justify-between transition-colors"
+                className="w-full p-4 md:p-6 text-left flex items-center justify-between transition-colors cursor-pointer"
               >
                 <p className="font-medium text-accent-green-text">
                   {faq.question}
                 </p>
                 <img
                   src={"/svg/arrow_down.svg"}
-                  className={`md:w-5 w-4 ml-2 transition-transform ${
+                  className={`md:w-5 w-4 ml-2 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 />
               </div>
-              {openIndex === index && (
+
+              {/* Answer with smooth transition */}
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  openIndex === index
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
                 <div className="p-6 pt-0">
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
