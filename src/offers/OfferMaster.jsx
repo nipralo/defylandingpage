@@ -1,0 +1,14 @@
+import Wrapper from "@/ui/Wrapper";
+import Batches from "./Batches";
+import ClassOfDrones from "./ClassOfDrones";
+
+export default function OfferMaster() {
+  return (
+    <section className="bg-accent-orange-light">
+      <Wrapper>
+        <ClassOfDrones />
+        <Batches />
+      </Wrapper>
+    </section>
+  );
+}

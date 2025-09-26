@@ -1,0 +1,13 @@
+{
+  "javascript.suggest.autoImports": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "checkJs": true,
+    "jsx": "react-jsx"
+  }
+}
