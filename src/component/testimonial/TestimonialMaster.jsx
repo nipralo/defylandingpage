@@ -39,13 +39,13 @@ export default function TestimonialMaster() {
   return (
     <section className="bg-primary-dark">
       <Wrapper>
-        <h2 className="font-bold text-center mb-10 text-accent-gold">
+        <h2 className="text-center mb-heading text-accent-gold">
           <span className="text-accent-gold">STORIES</span> OF SUCCESS
         </h2>
 
         <Swiper
           modules={[Pagination, Autoplay]}
-          spaceBetween={30}
+          spaceBetween={10}
           slidesPerView={1}
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000 }}
@@ -53,9 +53,9 @@ export default function TestimonialMaster() {
         >
           {testimonialData.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-lg mt-10 mx-4 relative">
-                <div className="flex flex-col lg:flex-row gap-4 md:gap-16 items-center">
-                  <div className="">
+              <div className=" rounded-lg lg:mt-10 mt-5 mx-2 relative">
+                <div className="flex flex-col lg:flex-row gap-0 lg:gap-14 items-center">
+                  <div className="lg:w-[60%]">
                     <div className="relative">
                       <img
                         src="/svg/quote_start.svg"
@@ -65,36 +65,48 @@ export default function TestimonialMaster() {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className=" aspect-[1/1] md:aspect-auto object-cover rounded-lg"
+                        className="w-full aspect-[1/1] md:aspect-auto object-cover rounded-lg"
                       />
                       <img
                         src="/svg/quote_end.svg"
-                        className="absolute bottom-8 -right-1 md:w-12 w-6"
+                        className="absolute bottom-8 -right-1 md:w-12 w-6 z-20"
                         alt="quote end"
                       />
+                      <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-primary to-transparent to-30% z-10 rounded-[7px]"></div>
+                      <div className="lg:hidden absolute h-fit bottom-3 right-6 z-20">
+                        <h3 className="font-medium text-white mb-0">
+                          {testimonial.name}
+                        </h3>
+                        <p className="italic text-white/80 font-light tracking-wide">
+                          {testimonial.location}
+                        </p>
+                      </div>
                     </div>
                   </div>
+
                   {/* content */}
-                  <div className="relative lg:w-[40%] py-8 h-full flex flex-col justify-center">
-                    <div>
-                      <h3 className="font-medium text-white mb-2">
+                  <div className="relative lg:w-[30%] py-4 md:py-8 h-full flex flex-col justify-center">
+                    <div className="hidden lg:block">
+                      <h3 className="font-medium text-white mb-1">
                         {testimonial.name}
                       </h3>
-                      <p className="italic text-white/80 font-light tracking-wide mb-4">
+                      <p className="italic text-white/80 font-light tracking-wide">
                         {testimonial.location}
                       </p>
                     </div>
-                    <div className="text-white mb-4 lg:mt-8 font-stretch-extra-expanded leading-7 md:leading-9 relative">
-                      <img
-                        src="/svg/quote_start.svg"
-                        className="w-2 absolute top-2 -left-3"
-                      />
-                      {testimonial.quote}
-                      <img
-                        src="/svg/quote_end.svg"
-                        className="w-2 inline ml-0.5 mb-4"
-                      />
-                      <p className="text-accent-gold italic font-light mt-6">
+                    <div className="text-white mb-4 lg:mt-8 font-stretch-expanded relative">
+                      <p className="relative leading-6 text-justify md:leading-9">
+                        <img
+                          src="/svg/quote_start.svg"
+                          className="w-2 inline-block mb-2 mr-0.5"
+                        />
+                        {testimonial.quote}
+                        <img
+                          src="/svg/quote_end.svg"
+                          className="w-2 inline ml-0.5 mb-2"
+                        />
+                      </p>
+                      <p className="text-accent-gold italic font-light mt-2 md:mt-4 lg:mt-6">
                         {testimonial.batch}
                       </p>
                     </div>

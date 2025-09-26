@@ -36,14 +36,14 @@ export default function WhyDefyMaster() {
   return (
     <section className="bg-white">
       <Wrapper>
-        <div className="grid gap-4 md:gap-16 items-center">
-          <div className="flex flex-col md:flex-row md:gap-10 gap-8 items-center">
+        <div className="grid md:gap-16 items-center">
+          <div className="flex flex-col md:flex-row md:gap-10 gap-6 items-center">
             <img
               src="/images/why_defy.webp"
               alt="Drone Training"
-              className="md:w-[70%] w-full h-50 md:h-90 max-w-[800px] object-cover rounded-lg shadow-lg"
+              className="md:w-[70%] w-full h-50 md:h-90 max-w-[800px] object-cover rounded-primary shadow-lg"
             />
-            <h2 className="flex md:flex-col gap-2 font-bold mb-8 text-primary">
+            <h2 className="flex md:flex-col gap-2 font-bold mb-heading text-primary">
               WHY
               <span className="text-outline-primary">DEFY?</span>
             </h2>
@@ -55,14 +55,14 @@ export default function WhyDefyMaster() {
                 return (
                   <div
                     key={index}
-                    className="text-center grow-1 w-fit px-4 py-5 md:p-10 flex flex-col gap-4 items-center border-2 border-gray-200 rounded-3xl"
+                    className="text-center grow-1 w-fit px-4 py-5 md:p-10 flex flex-col md:gap-4 gap-2 items-center border-2 border-gray-200 rounded-primary"
                   >
                     <img
                       src={benefit.icon.path}
                       className={`${benefit.icon.size}`}
                     />
                     <div>
-                      <p className="font-bold text-primary mb-2 title-3">
+                      <p className="font-bold text-primary title-3">
                         {benefit.title}
                       </p>
                       <p className="text-accent-green-text max-w-[350px] md:text-balance">

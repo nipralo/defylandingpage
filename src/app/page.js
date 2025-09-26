@@ -1,17 +1,16 @@
-import CurriculumMaster from "@/curriculum/CurriculumMaster";
-import FaqMaster from "@/faq/FaqMaster";
-import CTABanner from "@/footer/CTABanner";
-import FormDark from "@/form/FormDark";
-import FormLight from "@/form/FormLight";
-import HeroMaster from "@/hero/HeroMaster";
-import Slugs from "@/hero/Slugs";
-import LocationMaster from "@/location/LocationMaster";
-import NotificationMaster from "@/notification/NotificationMaster";
-import OfferMaster from "@/offers/OfferMaster";
-import TestimonialMaster from "@/testimonial/TestimonialMaster";
-import DroneTraining from "@/training/DroneTraining";
-import WhyDefyMaster from "@/work/WhyDefyMaster";
-import WorkMaster from "@/work/WorkMaster";
+import CurriculumMaster from "@/component/curriculum/CurriculumMaster";
+import FaqMaster from "@/component/faq/FaqMaster";
+import CTABanner from "@/component/footer/CTABanner";
+import RegistrationForm from "@/component/form/RegistrationForm";
+import HeroMaster from "@/component/hero/HeroMaster";
+import Slugs from "@/component/hero/Slugs";
+import LocationMaster from "@/component/location/LocationMaster";
+import NotificationMaster from "@/component/notification/NotificationMaster";
+import OfferMaster from "@/component/offers/OfferMaster";
+import TestimonialMaster from "@/component/testimonial/TestimonialMaster";
+import DroneTraining from "@/component/training/DroneTraining";
+import WhyDefyMaster from "@/component/work/WhyDefyMaster";
+import WorkMaster from "@/component/work/WorkMaster";
 export default function Home() {
   return (
     <>
@@ -21,13 +20,18 @@ export default function Home() {
       <OfferMaster />
       <WorkMaster />
       <WhyDefyMaster />
-      <FormLight />
+      <RegistrationForm />
       <NotificationMaster />
       <TestimonialMaster />
       <CurriculumMaster />
       <FaqMaster />
       <LocationMaster />
-      <FormDark />
+      <RegistrationForm
+        variant="dark"
+        subHeading="We'll help you get certified and start your aviation career"
+        secondaryHeading="REGISTER"
+        secondarySubtext="Next batch starts in 7 days. Don't miss out!"
+      />
       <CTABanner />
     </>
   );

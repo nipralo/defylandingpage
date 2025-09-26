@@ -38,9 +38,9 @@ export default function NotificationMaster() {
 
   return (
     <section className="">
-      <Wrapper>
-        <div className="bg-primary-light w-fit mx-auto p-2 rounded-xl">
-          <div className="flex items-center gap-2 w-fit mx-auto p-2 md:p-4 rounded-xl">
+      <Wrapper className="">
+        <div className="bg-primary-light w-fit mx-auto p-2 rounded-primary">
+          <div className="flex items-center gap-2 w-fit mx-auto p-2 md:p-4 ">
             <img src="/svg/person.svg" alt="person" className="w-4 h-4" />
             <p className="text-accent-green-text">
               <span className="font-bold mr-2">{name}</span>

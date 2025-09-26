@@ -17,7 +17,7 @@
   --font-archivo: "Archivo", "sans-serif";
 
   /* Consistent rounded corners */
-  --radius-primary: 1rem; /* rounded-lg */
+  --radius-primary: 0.8rem; /* rounded-lg */
 
   /* Shadow */
   --shadow-gradient: 0 0 30px hsla(180, 100%, 50%, 0.5),
@@ -34,20 +34,23 @@
   h3,
   h4,
   h5 {
-    @apply font-stretch-expanded text-primary;
-  }
-  h1 {
-    @apply text-2xl md:text-4xl font-bold md:leading-11;
+    @apply font-stretch-expanded text-primary font-bold mb-2 md:mb-4;
   }
 
+  h1,
   h2 {
-    @apply text-2xl md:text-4xl font-bold md:leading-11;
+    @apply text-xl md:text-4xl 2xl:text-[50px] font-bold md:leading-11 leading-tight;
   }
+
+  /* h2 {
+    @apply text-2xl md:text-4xl 2xl:text-[50px] font-bold md:leading-11;
+  } */
+
   h3 {
     @apply text-lg md:text-2xl;
   }
   p {
-    @apply md:text-lg text-sm;
+    @apply md:text-lg text-[12px];
   }
 }
 
@@ -63,24 +66,45 @@
     @apply text-xl lg:text-2xl font-bold md:leading-11 font-stretch-expanded;
   }
   .title-3 {
-    @apply text-lg md:text-2xl font-stretch-expanded;
+    @apply text-lg lg:text-2xl font-stretch-expanded;
   }
-}
+  .span-p {
+    @apply text-lg;
+  }
 
-@layer utilities {
+  .mb-heading {
+    @apply mb-4 md:mb-6 lg:mb-12;
+  }
+
   .text-outline-primary {
     color: transparent;
-    -webkit-text-stroke: 2px var(--color-primary);
+    -webkit-text-stroke: 1px var(--color-primary);
   }
   .text-outline-green {
     color: transparent;
-    -webkit-text-stroke: 2px var(--color-accent-green-base);
+    -webkit-text-stroke: 1px var(--color-accent-green-base);
   }
   .text-outline-white {
     color: transparent;
-    -webkit-text-stroke: 2px white;
+    -webkit-text-stroke: 1px white;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .text-outline-primary {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--color-primary);
+    }
+    .text-outline-green {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--color-accent-green-base);
+    }
+    .text-outline-white {
+      color: transparent;
+      -webkit-text-stroke: 2px white;
+    }
   }
 }
+
 :is(
     .swiper-horizontal > .swiper-pagination-bullets,
     .swiper-pagination-horizontal.swiper-pagination-bullets
@@ -88,4 +112,8 @@
   .swiper-pagination-bullet {
   background-color: white;
   color: white;
+}
+
+.swiper-pagination {
+  @apply !static lg:mt-4;
 }

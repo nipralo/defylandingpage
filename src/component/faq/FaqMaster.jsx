@@ -41,15 +41,15 @@ export default function FaqMaster() {
   return (
     <section className="bg-white">
       <Wrapper>
-        <h2 className="font-bold text-center md:mb-12 mb-8 text-primary">
+        <h2 className="font-bold text-center mb-heading text-primary">
           FAQ<span className="text-outline-primary">s</span>
         </h2>
 
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-3">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-200 hover:bg-gray-50 rounded-xl"
+              className="border border-gray-200 hover:bg-gray-50 rounded-primary"
             >
               <div
                 onClick={() => toggleFAQ(index)}

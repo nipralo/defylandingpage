@@ -31,42 +31,42 @@ export default function ClassOfDrones() {
   ];
 
   return (
-    <div className="text-center mb-16 over">
-      <h2 className="md:mb-12 mb-8">
+    <div className="text-center mb-heading over">
+      <h2 className="mb-heading">
         <span className="text-primary">CLASS OF</span>
         <span className="text-outline-primary"> DRONES</span>
       </h2>
 
-      <div className="flex gap-8 max-w-[950px] overflow-x-auto min-h-fit py-10  mx-auto">
+      <div className="flex gap-8 max-w-[950px] overflow-x-auto min-h-fit py-10 mx-auto">
         {classOptions.map((cls, idx) => (
           <div
             key={idx}
-            className={`rounded-3xl p-8 pt-14 min-w-[280px] bg-accent-orange-base ${
+            className={`rounded-primary p-5 pt-5 lg:p-8 lg:pt-10 min-w-[200px] md:min-w-[220px] lg:min-w-[280px] bg-accent-orange-base ${
               idx === 1 && "scale-110"
             } relative flex flex-col justify-start`}
           >
             {cls.badge && (
               <div className="absolute -top-3 right-0 left-0">
-                <span className="bg-accent-gold text-black/70 px-4 py-2 rounded-full font-stretch-condensed">
+                <span className="bg-accent-gold text-black/70 px-4 py-2 rounded-xl font-stretch-condensed">
                   {cls.badge}
                 </span>
               </div>
             )}
             <div>
-              <h3 className="text-accent-orange-dark font-extrabold mb-3">
+              <h3 className="text-accent-orange-dark font-extrabold">
                 {cls.title}
               </h3>
-              <p className="title-2 font-bold text-primary/80 mb-6 font-stretch-expanded text-nowrap">
+              <p className="title-3 font-bold text-primary/80 mb-4 lg:mb-6 font-stretch-expanded text-nowrap">
                 {cls.price} + GST
               </p>
             </div>
 
-            <div className="space-y-3 text-left">
+            <div className="space-y-2 text-left">
               {cls.features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <img
                     src={"/svg/tick.svg"}
-                    className="w-4 text-green-500 mt-1 flex-shrink-0"
+                    className="w-4 text-green-500 mt-2.5 flex-shrink-0"
                   />
                   <p className="text-primary">{feature}</p>
                 </div>

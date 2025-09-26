@@ -24,12 +24,12 @@ export default function LocationMaster() {
   return (
     <section className="">
       <Wrapper className="!pt-0">
-        <h2 className="font-bold text-center mb-12 text-accent-green-base">
+        <h2 className="font-bold text-center mb-heading text-accent-green-base">
           <span className="text-outline-green">WHERE</span> TO FIND US?
         </h2>
 
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
+          <div className="mb-heading">
             <img
               src="/images/location_banner.webp"
               alt="DEFY Training Facility"
@@ -37,7 +37,7 @@ export default function LocationMaster() {
             />
           </div>
 
-          <div className="flex flex-col-reverse md:flex-row gap-8">
+          <div className="flex flex-col-reverse md:flex-row gap-4 lg:gap-8">
             <div className="min-h-full w-full md:w-[60%]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.4592472127906!2d72.85314741155614!3d19.131364450155907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c86fa2855555%3A0x10ab5170e76d328a!2sDefy%20Aerospace!5e0!3m2!1sen!2sin!4v1758719257222!5m2!1sen!2sin"
@@ -52,7 +52,7 @@ export default function LocationMaster() {
               {locationData.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col items-center justify-center gap-2 bg-[#f7f6ec] p-3 md:p-5 rounded-xl ${
+                  className={`flex flex-col justify-center gap-2 bg-[#f7f6ec] p-3 md:p-5 rounded-primary ${
                     index === 1 ? "row-span-2" : ""
                   }`}
                 >
@@ -64,7 +64,7 @@ export default function LocationMaster() {
                       <img
                         src={item.icon}
                         alt={item.description}
-                        className="w-5 mt-1"
+                        className="lg:w-5 w-4 mt-1"
                       />
                       <p className="text-accent-green-text/90">
                         {item.description}
