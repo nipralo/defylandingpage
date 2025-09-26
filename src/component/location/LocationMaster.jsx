@@ -22,7 +22,7 @@ const locationData = [
 
 export default function LocationMaster() {
   return (
-    <section className="">
+    <section id="location" className="">
       <Wrapper className="!pt-0">
         <h2 className="font-bold text-center mb-heading text-accent-green-base">
           <span className="text-outline-green">WHERE</span> TO FIND US?

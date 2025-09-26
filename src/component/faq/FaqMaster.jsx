@@ -39,7 +39,7 @@ export default function FaqMaster() {
   };
 
   return (
-    <section className="bg-white">
+    <section id="faq" className="bg-white">
       <Wrapper>
         <h2 className="font-bold text-center mb-heading text-primary">
           FAQ<span className="text-outline-primary">s</span>
