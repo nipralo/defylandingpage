@@ -214,7 +214,7 @@ export default function RegistrationForm({
               handleChange={handleChange}
               handleCitySelect={handleCitySelect}
             />
-            <Button type="submit" className="my-2">
+            <Button type="submit" className="my-2 md:w-full">
               GET FREE CONSULTATION
             </Button>
           </form>

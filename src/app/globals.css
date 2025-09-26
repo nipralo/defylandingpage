@@ -1,6 +1,73 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 /* Extend Tailwind defaults */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* // Archivo Expanded - Light (300) */
+@font-face {
+  font-family: "Archivo Expanded";
+  src: url("/fonts/archivo-expanded-light/archivo-expanded-light.woff2")
+      format("woff2"),
+    url("/fonts/archivo-expanded-light/archivo-expanded-light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* // Archivo Expanded - Regular (Normal Weight) */
+@font-face {
+  font-family: "Archivo Expanded";
+  src: url("/fonts/archivo-expanded/archivo-expanded.woff2") format("woff2"),
+    url("/fonts/archivo-expanded/archivo-expanded.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* // Archivo Expanded - Medium (500)) */
+@font-face {
+  font-family: "Archivo Expanded";
+  src: url("/fonts/archivo-expanded-medium/archivo-expanded-medium.woff2")
+      format("woff2"),
+    url("/fonts/archivo-expanded-medium/archivo-expanded-medium.woff")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* // Archivo Expanded - SemiBold (600) */
+@font-face {
+  font-family: "Archivo Expanded";
+  src: url("/fonts/archivo-expanded-semiBold/archivo-expanded-semiBold.woff2")
+      format("woff2"),
+    url("/fonts/archivo-expanded-semiBold/archivo-expanded-semiBold.woff")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* // Archivo Expanded - Bold (700) */
+@font-face {
+  font-family: "Archivo Expanded";
+  src: url("/fonts/archivo-expanded-bold/archivo-expanded-bold.ttf")
+    format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* // Archivo Expanded - ExtraBold (800) */
+@font-face {
+  font-family: "Archivo Expanded";
+  src: url("/fonts/archivo-expanded-extraBold/archivo-expanded-extraBold.woff2")
+      format("woff2"),
+    url("/fonts/archivo-expanded-extraBold/archivo-expanded-extraBold.woff")
+      format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   /* Brand colors */
   --color-primary: hsl(211, 42%, 22%);
@@ -14,7 +81,8 @@
   --color-accent-green-light: hsl(57, 39%, 89%);
   --color-accent-green-dark: hsl(152, 94%, 13%);
   --color-accent-green-text: hsl(166, 17%, 34%);
-  --font-archivo: "Archivo", "sans-serif";
+  --font-archivo-expanded: "Archivo Expanded", "sans-serif" !important;
+  --font-archivo: "Archivo", "sans-serif" !important;
 
   /* Consistent rounded corners */
   --radius-primary: 0.8rem; /* rounded-lg */

@@ -36,7 +36,7 @@ export default function CTABanner() {
         <p className="text-accent-green-base">
           No payment is required for an expert consultation!
         </p>
-        <Button className="my-3">GET FREE CONSULTATION</Button>
+        <Button className="my-3" >GET FREE CONSULTATION</Button>
       </div>
     </div>
   );
