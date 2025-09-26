@@ -13,7 +13,7 @@ export default function NavItems({ item, isDark }) {
   return (
     <button
       onClick={() => scrollToSection(item.target)}
-      className={`backdrop-blur-sm border-1 justify-center items-center gap-1 text-white border-white/20 rounded-md px-1 lg:px-4 py-2 lg:py-3 flex lg:gap-3 text-[11px] text-nowrap lg:text-xl font-light tracking-wide transition-all
+      className={`backdrop-blur-sm border-1 justify-center items-center gap-1 text-white border-white/20 rounded-md px-1.5 lg:px-4 py-2 lg:py-3 flex lg:gap-3 text-[11px] text-nowrap lg:text-xl font-light tracking-wide transition-all
                 ${
                   isDark
                     ? "bg-black/40 hover:bg-black/60"

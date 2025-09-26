@@ -1,8 +1,18 @@
+"use client"
 import getNextDate from "@/utils/getNextDate";
 import getSpotsRemaining from "@/utils/getSpotsRemaining";
+import { useEffect, useRef } from "react";
 
 // utils function to get next Wednesday
 export default function Batches() {
+    const scrollRef = useRef(null);
+  
+    useEffect(() => {
+      const el = scrollRef.current;
+      if (el) {
+        el.scrollLeft = el.scrollWidth / 2 - el.clientWidth / 2;
+      }
+    }, []);
   const nextBatchDate = getNextDate(3);
 
   const batchOptions = [
@@ -10,19 +20,19 @@ export default function Batches() {
       title: "Small",
       date: nextBatchDate,
       location: "Bangalore",
-      spots: getSpotsRemaining(nextBatchDate, "small", 9),
+      spots: getSpotsRemaining(nextBatchDate, "small", 5),
     },
     {
       title: "Combo",
       date: nextBatchDate,
       location: "Bangalore",
-      spots: getSpotsRemaining(nextBatchDate, "combo", 6),
+      spots: getSpotsRemaining(nextBatchDate, "combo", 2),
     },
     {
       title: "Medium",
       date: nextBatchDate,
       location: "Bangalore",
-      spots: getSpotsRemaining(nextBatchDate, "medium", 7),
+      spots: getSpotsRemaining(nextBatchDate, "medium", 3),
     },
   ];
 
@@ -38,7 +48,7 @@ export default function Batches() {
         </p>
       </div>
 
-      <div className="flex gap-4 max-w-3xl overflow-x-auto mx-auto text-primary">
+      <div className="flex gap-4 max-w-3xl overflow-x-auto mx-auto text-primary pb-2" ref={scrollRef}>
         {batchOptions.map((batch, idx) => (
           <div
             key={idx}

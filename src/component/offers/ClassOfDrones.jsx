@@ -1,4 +1,16 @@
+"use client"
+import { useEffect, useRef } from "react";
+
 export default function ClassOfDrones() {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      el.scrollLeft = el.scrollWidth / 2 - el.clientWidth / 2;
+    }
+  }, []);
+
   const classOptions = [
     {
       title: "SMALL",
@@ -37,7 +49,7 @@ export default function ClassOfDrones() {
         <span className="text-outline-primary"> DRONES</span>
       </h2>
 
-      <div className="flex gap-8 max-w-[950px] overflow-x-auto min-h-fit py-10 mx-auto">
+      <div className="flex gap-8 max-w-[950px] overflow-x-auto min-h-fit py-10 mx-auto"  ref={scrollRef}>
         {classOptions.map((cls, idx) => (
           <div
             key={idx}
