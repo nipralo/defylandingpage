@@ -50,7 +50,7 @@ export default function LocationMaster() {
                 <div
                   key={index}
                   className={`flex flex-col justify-center gap-2 bg-[#f7f6ec] p-3 md:p-5 rounded-primary ${
-                    index === 1 ? "row-span-2" : ""
+                    index === 2 ? "row-span-2" : ""
                   }`}
                 >
                   <div>

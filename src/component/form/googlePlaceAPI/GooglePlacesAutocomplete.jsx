@@ -25,7 +25,7 @@ const GooglePlacesAutocomplete = ({ value, onSelectCity, isPopup = false }) => {
       >
         <input
           type="text"
-          placeholder="City"
+          placeholder="Your City"
           value={value || ""}
           onChange={(e) => onSelectCity(e.target.value)}
           className={`z-[1002] w-full py-3 px-4 rounded-sm outline-none form-input bg-white placeholder:text-black/50 text-black ${

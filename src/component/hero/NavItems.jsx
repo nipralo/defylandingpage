@@ -1,15 +1,8 @@
 "use client";
 
-import useInView from "@/hooks/useInView";
 import scrollToSection from "@/utils/scrollToSection";
 
-export default function NavItems({ item, isDark }) {
-  const isActive = useInView(item.target, {
-    root: null,
-    rootMargin: "0px 0px 0px 0px",
-    threshold: 0.6,
-  });
-
+export default function NavItems({ item, isDark, isActive }) {
   return (
     <button
       onClick={() => scrollToSection(item.target)}

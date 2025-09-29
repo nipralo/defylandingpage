@@ -53,13 +53,13 @@ export default function TestimonialMaster() {
         >
           {testimonialData.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-lg md:mt-10 mt-5  mx-2 md:mx-5 relative">
+              <div className="rounded-lg md:mt-10 mt-5  mx-2 md:mx-5 relative">
                 <div className="flex flex-col lg:flex-row gap-0 lg:gap-14 items-center">
                   <div className="lg:w-[60%]">
                     <div className="relative">
                       <img
                         src="/svg/quote_start.svg"
-                        className="absolute -top-4 md:-top-10 -left-2 md:-left-4 md:w-12 w-6"
+                        className="absolute -top-4 md:-top-10 -left-2 md:-left-4 md:w-12 w-8"
                         alt="quote start"
                       />
                       <img
@@ -69,7 +69,7 @@ export default function TestimonialMaster() {
                       />
                       <img
                         src="/svg/quote_end.svg"
-                        className="absolute bottom-8 -right-1 md:w-12 w-6 z-20"
+                        className="absolute -bottom-3 md:bottom-8 -right-1 md:w-12 w-8 z-20"
                         alt="quote end"
                       />
                       <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-primary to-transparent to-30% z-10 rounded-[7px]"></div>

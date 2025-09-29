@@ -135,7 +135,7 @@ export default function RegistrationForm({
       <Wrapper>
         <div className="max-w-[680px] mx-auto">
           <h2
-            className={`font-bold text-center ${
+            className={`font-bold text-center mb-1 ${
               isDark ? "text-white" : "text-primary"
             }`}
           >
@@ -156,7 +156,7 @@ export default function RegistrationForm({
             </p>
           )}
 
-          <div className="flex gap-2 md:gap-4 mb-heading mt-4 justify-center">
+          <div className="flex gap-2 md:gap-4 mb-heading mt-6 justify-center">
             <button className="bg-accent-green-dark text-[#EDE876] p-2 py-0 md:px-10 md:py-6 rounded-primary font-medium text-xs md:text-xl w-full text-nowrap">
               No Payment Required Now
             </button>
@@ -168,7 +168,7 @@ export default function RegistrationForm({
           {secondaryHeading && (
             <div className="mb-heading">
               <h2
-                className={`font-bold text-center mb-2 ${
+                className={`font-bold text-center mb-1 ${
                   isDark ? "text-white" : "text-primary"
                 }`}
               >
@@ -202,7 +202,11 @@ export default function RegistrationForm({
               handleChange={handleChange}
               handleCitySelect={handleCitySelect}
             />
-            <Button type="submit" className="my-2 !w-full" loading={loading}>
+            <Button
+              type="submit"
+              className="my-4 md:my-8 !w-full"
+              loading={loading}
+            >
               GET FREE CONSULTATION
             </Button>
           </form>
