@@ -26,7 +26,7 @@ const testimonialData = [
     batch: "Batch of April 2025",
   },
   {
-    name: "Aditi Gupta",
+    name: "Aditri Gupta",
     location: "Bangalore",
     image: "/images/unnati_2.webp",
     quote:
@@ -53,7 +53,7 @@ export default function TestimonialMaster() {
         >
           {testimonialData.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className=" rounded-lg lg:mt-10 mt-5 mx-2 relative">
+              <div className=" rounded-lg md:mt-10 mt-5  mx-2 md:mx-5 relative">
                 <div className="flex flex-col lg:flex-row gap-0 lg:gap-14 items-center">
                   <div className="lg:w-[60%]">
                     <div className="relative">
@@ -73,7 +73,7 @@ export default function TestimonialMaster() {
                         alt="quote end"
                       />
                       <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-primary to-transparent to-30% z-10 rounded-[7px]"></div>
-                      <div className="lg:hidden absolute h-fit bottom-3 right-6 z-20">
+                      <div className="lg:hidden absolute h-fit bottom-3 right-8 md:right-16 z-20">
                         <h3 className="font-medium text-white mb-0">
                           {testimonial.name}
                         </h3>
