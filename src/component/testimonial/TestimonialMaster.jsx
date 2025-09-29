@@ -26,11 +26,11 @@ const testimonialData = [
     batch: "Batch of April 2025",
   },
   {
-    name: "Unnati Shetty",
+    name: "Aditi Gupta",
     location: "Bangalore",
     image: "/images/unnati_2.webp",
     quote:
-      "Drones were my passion, but I didn’t know how to fly them professionally. Defy’s training made me skilled and confident in the air.",
+      "Drones were once just my hobby. Defy helped me turn that passion into a career, and now I earn well doing what I enjoy most - flying.",
     batch: "Batch of April 2025",
   },
 ];

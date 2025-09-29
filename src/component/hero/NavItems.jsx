@@ -6,8 +6,8 @@ import scrollToSection from "@/utils/scrollToSection";
 export default function NavItems({ item, isDark }) {
   const isActive = useInView(item.target, {
     root: null,
-    rootMargin: "-10% 0px -100% 0px",
-    threshold: 0,
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 0.6,
   });
 
   return (
@@ -24,7 +24,9 @@ export default function NavItems({ item, isDark }) {
       <img
         src="/svg/arrow_top_right.svg"
         alt="arrow top right icon"
-        className={`w-2.5 lg:w-4.5 transition-all duration-500 ease-in-out ${isActive ? "rotate-90 " : ""}`}
+        className={`w-2.5 lg:w-4.5 transition-all duration-500 ease-in-out ${
+          isActive ? "rotate-90 " : ""
+        }`}
       />
       {item.label}
     </button>

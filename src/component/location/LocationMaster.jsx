@@ -40,14 +40,11 @@ export default function LocationMaster() {
           <div className="flex flex-col-reverse md:flex-row gap-4 lg:gap-8">
             <div className="min-h-full w-full md:w-[60%]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.4592472127906!2d72.85314741155614!3d19.131364450155907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c86fa2855555%3A0x10ab5170e76d328a!2sDefy%20Aerospace!5e0!3m2!1sen!2sin!4v1758719257222!5m2!1sen!2sin"
-                width="600"
-                height="450"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.291562248032!2d77.5174335!3d12.824426499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae41f1a5788c3d%3A0xd9419766cef8bf1a!2sDefy%20Aerospace%20RPTO!5e0!3m2!1sen!2sin!4v1759125565403!5m2!1sen!2sin"
                 loading="lazy"
                 className="w-full h-full rounded-xl"
               ></iframe>
             </div>
-
             <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-8 grid-flow-dense">
               {locationData.map((item, index) => (
                 <div
