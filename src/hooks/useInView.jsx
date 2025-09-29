@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 
 export default function useInView(
   id,
-  options = { root: null, rootMargin: "-10% 0px -10% 0px", threshold: 0 }
+  options = {
+    root: null,
+    rootMargin: "0px 0px 0px 0px", // safer for iOS
+    threshold: 0.1, // more reliable than 0
+  }
 ) {
   const [isInView, setIsInView] = useState(false);
 
@@ -17,7 +21,9 @@ export default function useInView(
 
     observer.observe(element);
 
-    return () => observer.unobserve(element);
+    return () => {
+      observer.disconnect(); // safer than unobserve on iOS
+    };
   }, [id, options]);
 
   return isInView;

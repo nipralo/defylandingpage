@@ -30,7 +30,7 @@ export default function Home() {
         variant="dark"
         subHeading="We'll help you get certified and start your aviation career"
         secondaryHeading="REGISTER"
-        secondarySubtext="Next batch starts in 7 days. Don't miss out!"
+        secondarySubtext="Next batch starts soon. Don't miss out!"
       />
       <CTAFooter />
     </>
