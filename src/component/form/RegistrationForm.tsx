@@ -4,7 +4,7 @@ import Button from "@/ui/Button";
 import Wrapper from "@/ui/Wrapper";
 import validateField from "@/utils/validateField";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormFields from "./FormFields";
 
 export default function RegistrationForm({
@@ -18,12 +18,15 @@ export default function RegistrationForm({
   const isDark = variant === "dark";
 
   const [formData, setFormData] = useState({
-    full_Name: "",
+    name: "",
     phone: "",
     email: "",
     city: "",
     month: "",
     form_type: "",
+    utm_source: "",
+    utm_medium: "",
+    utm_campaign: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -62,12 +65,15 @@ export default function RegistrationForm({
     if (Object.keys(newErrors).length === 0) {
       const payload = {
         data: {
-          full_name: formData.full_Name, // Adjust for Strapi field
+          name: formData.name, // Adjust for Strapi field
           phone: formData.phone,
           email: formData.email,
           city: formData.city,
           preferred_training_month: formData.month, // Map to Strapi's field
           form_type: variant === "light" ? "form 1" : "form 2",
+          utm_source: formData.utm_source,
+          utm_medium: formData.utm_medium,
+          utm_campaign: formData.utm_campaign,
         },
       };
 
@@ -91,15 +97,18 @@ export default function RegistrationForm({
         const result = await response.json();
         console.log("Form submitted successfully:", result);
         setFormData({
-          full_Name: "",
+          name: "",
           phone: "",
           email: "",
           city: "",
           month: "",
           form_type: "",
+          utm_source: "",
+          utm_medium: "",
+          utm_campaign: "",
         });
         const queryParams = new URLSearchParams({
-          full_Name: formData.full_Name,
+          name: formData.name,
           phone: formData.phone,
           email: formData.email,
           city: formData.city,
@@ -113,26 +122,51 @@ export default function RegistrationForm({
       } catch (error) {
         console.error("Form submission error:", error);
         setFormData({
-          full_Name: "",
+          name: "",
           phone: "",
           email: "",
           city: "",
           month: "",
           form_type: "",
+          utm_source: "",
+          utm_medium: "",
+          utm_campaign: "",
         });
       }
     } else {
       console.log("Cannot submit, errors exist:", newErrors);
       setFormData({
-        full_Name: "",
+        name: "",
         phone: "",
         email: "",
         city: "",
         month: "",
         form_type: "",
+        utm_source: "",
+        utm_medium: "",
+        utm_campaign: "",
       });
     }
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+
+      const firstVisitUrl = localStorage.getItem("firstVisitUrl") || "";
+
+      // Optional: you can parse utmParams from localStorage too
+      const utmParams = JSON.parse(localStorage.getItem("utmParams") || "{}");
+
+      setFormData((prev) => ({
+        ...prev,
+        utm_source: firstVisitUrl,
+        utm_medium: firstVisitUrl,
+        utm_campaign: firstVisitUrl,
+      }));
+    }
+    // console.log(firstVisitUrl, "firstVisitUrl");
+  }, []);
 
   return (
     <section
