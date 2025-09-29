@@ -1,18 +1,18 @@
-"use client"
+"use client";
 import getNextDate from "@/utils/getNextDate";
 import getSpotsRemaining from "@/utils/getSpotsRemaining";
 import { useEffect, useRef } from "react";
 
 // utils function to get next Wednesday
 export default function Batches() {
-    const scrollRef = useRef(null);
-  
-    useEffect(() => {
-      const el = scrollRef.current;
-      if (el) {
-        el.scrollLeft = el.scrollWidth / 2 - el.clientWidth / 2;
-      }
-    }, []);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      el.scrollLeft = el.scrollWidth / 2 - el.clientWidth / 2;
+    }
+  }, []);
   const nextBatchDate = getNextDate(3);
 
   const batchOptions = [
@@ -36,6 +36,17 @@ export default function Batches() {
     },
   ];
 
+  const getDateFormat = (date) => {
+    // Get day and month
+    const options = { day: "2-digit", month: "long" };
+    const dayMonth = date.toLocaleDateString("en-GB", options); // "01 October"
+
+    // Get last 2 digits of year
+    const year = date.getFullYear().toString().slice(-2); // "25"
+
+    return `${dayMonth}’${year}`; // "01 October’25"
+  };
+
   return (
     <div className="text-center md:pt-8">
       <div className="mb-heading">
@@ -48,7 +59,10 @@ export default function Batches() {
         </p>
       </div>
 
-      <div className="flex gap-4 max-w-3xl overflow-x-auto mx-auto text-primary pb-2" ref={scrollRef}>
+      <div
+        className="flex gap-4 max-w-3xl overflow-x-auto mx-auto text-primary pb-2"
+        ref={scrollRef}
+      >
         {batchOptions.map((batch, idx) => (
           <div
             key={idx}
@@ -59,9 +73,7 @@ export default function Batches() {
             <div className="space-y-3 text-left text-primary">
               <div className="flex items-center gap-3">
                 <img src={"/svg/calender.svg"} className="w-5 h-5" />
-                <p>
-                  {batch.date.toLocaleDateString("en-GB").replace(",", "'")}
-                </p>
+                <p>{getDateFormat(batch.date)}</p>
               </div>
               <div className="flex items-center gap-3">
                 <img src="/svg/location.svg" className="w-5 h-5" />
