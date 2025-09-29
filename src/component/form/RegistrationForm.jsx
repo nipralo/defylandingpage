@@ -34,6 +34,7 @@ export default function RegistrationForm({
 
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,11 +45,9 @@ export default function RegistrationForm({
   };
 
   const handleCitySelect = (cityName) => {
-    // Reuse handleChange logic by simulating an event-like object
     handleChange({ target: { name: "city", value: cityName } });
   };
 
-  // Full form validation
   const validateForm = (data) => {
     const errors = {};
     Object.keys(data).forEach((key) => {
@@ -58,7 +57,6 @@ export default function RegistrationForm({
     return errors;
   };
 
-  // Reset form to initial state
   const resetForm = () => {
     setFormData({
       ...formData,
@@ -73,12 +71,14 @@ export default function RegistrationForm({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const newErrors = validateForm(formData);
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length) {
       toast.error("Please fix the errors before submitting.");
+      setLoading(false);
       return;
     }
 
@@ -107,18 +107,14 @@ export default function RegistrationForm({
       console.error(err);
       toast.error("Something went wrong! Please try again.");
       resetForm();
+    } finally {
+      setLoading(false); // ✅ Stop loading
     }
   };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-
       const firstVisitUrl = localStorage.getItem("firstVisitUrl") || "";
-
-      // Optional: you can parse utmParams from localStorage too
-      const utmParams = JSON.parse(localStorage.getItem("utmParams") || "{}");
-
       setFormData((prev) => ({
         ...prev,
         form_type: variant === "light" ? "form 1" : "form 2",
@@ -127,7 +123,6 @@ export default function RegistrationForm({
         utm_campaign: firstVisitUrl,
       }));
     }
-    // console.log(firstVisitUrl, "firstVisitUrl");
   }, []);
 
   return (
@@ -207,7 +202,7 @@ export default function RegistrationForm({
               handleChange={handleChange}
               handleCitySelect={handleCitySelect}
             />
-            <Button type="submit" className="my-2 !w-full">
+            <Button type="submit" className="my-2 !w-full" loading={loading}>
               GET FREE CONSULTATION
             </Button>
           </form>

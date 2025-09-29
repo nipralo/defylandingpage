@@ -103,6 +103,17 @@
       -webkit-text-stroke: 2px white;
     }
   }
+
+  .bg-radial-primary {
+    background: radial-gradient(farthest-side, var(--color-primary) 94%, #0000)
+        top/8px 8px no-repeat,
+      conic-gradient(#0000 30%, var(--color-primary));
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 8px),
+      #000 0
+    );
+  }
 }
 
 :is(

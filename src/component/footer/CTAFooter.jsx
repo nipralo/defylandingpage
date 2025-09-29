@@ -37,7 +37,10 @@ export default function CTAFooter() {
         <p className="text-accent-green-base">
           No payment is required for an expert consultation!
         </p>
-        <Button onClick={() => scrollToSection("form-2")} className="my-3">
+        <Button
+          onClick={() => scrollToSection("form-2")}
+          className="my-3 mx-auto"
+        >
           GET FREE CONSULTATION
         </Button>
       </div>
