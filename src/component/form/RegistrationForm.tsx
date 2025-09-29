@@ -69,7 +69,7 @@ export default function RegistrationForm({
           phone: formData.phone,
           email: formData.email,
           city: formData.city,
-          preferred_training_month: formData.month, // Map to Strapi's field
+          month: formData.month, // Map to Strapi's field
           form_type: variant === "light" ? "form 1" : "form 2",
           utm_source: formData.utm_source,
           utm_medium: formData.utm_medium,
