@@ -28,15 +28,15 @@ export default function FormFields({
       {/* Full Name */}
       <input
         type="text"
-        name="full_Name"
-        value={formData.full_Name}
+        name="name"
+        value={formData.name}
         onChange={handleChange}
         placeholder="Full Name"
         className="w-full px-4 py-3 border border-white rounded-sm focus:outline-none bg-white text-black"
         required
       />
-      {errors.full_Name && (
-        <p className="text-sm text-red-500">{errors.full_Name}</p>
+      {errors.name && (
+        <p className="text-sm text-red-500">{errors.name}</p>
       )}
 
       {/* Phone */}
