@@ -1,8 +1,9 @@
+import FirstVisitTracker from "@/component/FirstVisitTracker/FirstVisitTracker";
 import ScrollToTopButton from "@/ui/ScrollToTopButton";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
-import FirstVisitTracker from "@/component/FirstVisitTracker/FirstVisitTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -149,6 +150,7 @@ export default function RootLayout({ children }) {
         </noscript>
         <FirstVisitTracker />
         {children}
+        <Toaster position="top-right" />
         <ScrollToTopButton />
       </body>
     </html>
