@@ -45,12 +45,12 @@ export default function LocationMaster() {
                 className="w-full h-full rounded-xl"
               ></iframe>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-8 grid-flow-dense">
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-4 lg:gap-8 grid-flow-dense">
               {locationData.map((item, index) => (
                 <div
                   key={index}
                   className={`flex flex-col justify-center gap-2 bg-[#f7f6ec] p-3 md:p-5 rounded-primary ${
-                    index === 2 ? "row-span-2" : ""
+                    index === 1 ? "row-span-2" : ""
                   }`}
                 >
                   <div>

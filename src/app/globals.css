@@ -66,7 +66,7 @@
     @apply text-xl lg:text-2xl font-bold md:leading-11 font-stretch-expanded;
   }
   .title-3 {
-    @apply text-lg lg:text-2xl font-stretch-expanded;
+    @apply text-lg lg:text-2xl font-stretch-expanded leading-tight mb-2;
   }
   .span-p {
     @apply text-lg;

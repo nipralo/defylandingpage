@@ -5,7 +5,7 @@ const whyDefyData = {
   image: "/images/drone-training.jpg",
   benefits: [
     {
-      icon: { path: "/svg/badge.svg", size: "md:w-14 w-7" },
+      icon: { path: "/svg/badge.svg", size: "md:w-13 w-7" },
       title: "Get DGCA Certified",
       description: "Official certification recognized across India",
     },
@@ -15,17 +15,17 @@ const whyDefyData = {
       description: "Trained by experts & successfully placed",
     },
     {
-      icon: { path: "/svg/bed.svg", size: "md:w-12 w-7" },
+      icon: { path: "/svg/bed.svg", size: "md:w-14 w-7" },
       title: "Hostels & Meals",
       description: "Assistance for stay and meals provided",
     },
     {
-      icon: { path: "/svg/shield.svg", size: "md:w-12 w-6" },
+      icon: { path: "/svg/shield.svg", size: "md:w-11 w-6" },
       title: "Become Job Ready",
       description: "100% Placement Assistance Included",
     },
     {
-      icon: { path: "/svg/watsapp.svg", size: "md:w-11 w-6" },
+      icon: { path: "/svg/watsapp.svg", size: "md:w-12 w-6" },
       title: "WhatsApp Job Community",
       description: "Here with you on your drone pilot journey always",
     },
@@ -55,7 +55,7 @@ export default function WhyDefyMaster() {
                 return (
                   <div
                     key={index}
-                    className="text-center grow-1 w-fit px-4 py-5 md:p-10 flex flex-col md:gap-4 gap-2 items-center border-2 border-gray-200 rounded-primary"
+                    className="text-center grow-1 w-fit px-4 py-5 md:p-10 flex flex-col justify-center md:gap-4 gap-2 items-center border-2 border-gray-200 rounded-primary"
                   >
                     <img
                       src={benefit.icon.path}

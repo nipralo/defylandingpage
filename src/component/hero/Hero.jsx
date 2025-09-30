@@ -11,7 +11,7 @@ export default function Hero() {
         backgroundImage: "url('/images/hero_banner.png')",
       }}
     >
-      <Wrapper className="!pb-16 lg:!pb-28">
+      <Wrapper className="!pb-16 lg:!pb-28 [@media(max-width:375px)]:!pb-24">
         {/* Content */}
         <div className="relative z-10">
           <div className="mb-4 lg:mb-8">

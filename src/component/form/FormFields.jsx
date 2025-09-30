@@ -64,7 +64,7 @@ export default function FormFields({
           name="month"
           value={formData.month}
           onChange={handleChange}
-          className={`w-full px-2 py-4 border border-white rounded-sm bg-white text-black focus:outline-0 ${
+          className={`w-full appearance-none px-4 py-3 border border-white rounded-sm bg-white text-black focus:outline-0 ${
             !formData.month ? "text-black/50" : "text-black"
           }`}
           required
